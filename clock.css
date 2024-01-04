@@ -1,0 +1,112 @@
+h1{
+    font-size: 55px;
+    text-align: center;
+    color: black;
+    margin: 0px;
+}
+h2{
+    width: 100%;
+    font-size: 30px;
+    color: black;
+}
+
+h3{
+    font-size: 15px;
+    margin: 10px;
+    text-align: center;
+    color: black
+}
+body {color: rgb(255, 255, 255);
+    font-style: bold;
+    font-family: 'Lucida Sans', 
+    'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+    Geneva, Verdana, sans-serif;
+    padding: 10px;
+    margin: 20px;}
+
+p {
+    background-color: black;
+    padding: 20px;
+    line-height: 1.75;
+}
+.question{
+    float: left;
+}
+.answer{
+    font-size: 15px;
+}
+.time{
+    font-size: 40px; 
+}
+.conversions{
+    font-size: 20px;
+}
+.menu{
+    text-align: center; 
+    width: 76%;
+    background-color: #141301;
+    /* margin: auto; */
+    overflow: hidden;
+    margin-left: 12%; 
+    margin-right: 12%; 
+    /* padding: 0px; */
+    /* border-style: solid;  */
+}
+ul{
+    padding: 10px;
+}
+.menu a{
+    font-weight: bold; 
+    color: #E5E7E6;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color:#9c9b9a
+}
+
+
+.menu li {
+    text-align: center; 
+    display: inline-block;  /* makes ul list display horizontally */
+    width: 100px;
+    /* padding-right:20px; 
+    padding-left: 20px; */
+
+}
+
+.column-1, .column-2 {
+    float: left; /* makes columns sit next to each other horizontally*/
+    margin: 0px;
+}
+
+.column-1 {
+        width: 60%;
+    }  
+.column-2 {
+    width: 40%;
+}
+
+.demon_gorl{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.oops{
+    background-color: white;
+    margin: 0px;
+}
+
+em{
+    font-style: normal;
+    color: red;
+}
+
+
+@media (max-width: 900px){
+    .column-1, .column-2{
+        width: 100%
+    }
+}
