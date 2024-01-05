@@ -9,6 +9,8 @@ var tnow = d.getTime()/1000;
 
 const tiltMax = 23.44*Math.PI/180;
 
+const setOffAng = 0.01454
+
 
 
 
@@ -58,9 +60,9 @@ function findRise(t,check=0,acc=.0001){
 
     var y = Math.cos(lat)*Math.cos(laSun)*(Math.cos(long+check)*Math.cos(loSun)+Math.sin(long+check)*Math.sin(loSun))+Math.sin(lat)*Math.sin(laSun)
 
-    if (y<acc && y>-1*acc){return check}
+    if (y+setOffAng<acc && y+setOffAng>-1*acc){return check}
 
-    else{return findRise(t,check-y,acc)}
+    else{return findRise(t,check-y-setOffAng,acc)}
 }
 
 function findSet(t,check=0,acc=.0001){
@@ -72,9 +74,9 @@ function findSet(t,check=0,acc=.0001){
 
     var y = Math.cos(lat)*Math.cos(laSun)*(Math.cos(long+check)*Math.cos(loSun)+Math.sin(long+check)*Math.sin(loSun))+Math.sin(lat)*Math.sin(laSun)
 
-    if (y<acc && y>-1*acc){return check}
+    if (y+setOffAng<acc && y+setOffAng>-1*acc){return check}
 
-    else{return findSet(t,check+y,acc)}
+    else{return findSet(t,check+y+setOffAng,acc)}
 }
 
 
