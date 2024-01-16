@@ -222,7 +222,7 @@ function tick(){
     var sillyTime = hToTStr(hours);
     var oldTime = hToTStr(d.getHours()+d.getMinutes()/60+d.getSeconds()/3600);
 
-    document.getElementById("timeval").innerHTML = "{new_time:\"" + sillyTime[0]+"\"}";
+    document.getElementById("timeval").innerHTML = "{\"new_time\":\"" + sillyTime[0]+"\"}";
     // document.getElementById("timeval").style = sillyTime[1];
     // document.getElementById("oldtime").innerHTML = "Old Time: " + oldTime[0];
     // document.getElementById("oldtime").style = oldTime[1];
