@@ -3,14 +3,20 @@ var long;
 var solstices = [1687359480,1718916600];
 var ts0;
 var ts1;
+var data = {};
 
 var d = new Date();
 var tnow = d.getTime()/1000;
 
 const tiltMax = 23.44*Math.PI/180;
 
-const setOffAng = 0.01454
+const setOffAng = 0.01454;
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+const paramArr = JSON.parse(params['loc'])
+lat = paramArr[0]*Math.PI/180;
+long = paramArr[1]*Math.PI/180
 
 
 
@@ -30,15 +36,15 @@ function findSolstices(){
 
 
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(main);
-    } 
-    else { 
-        // document.getElementById("calculations").innerHTML = "Geolocation is not supported by this browser. Using default (Boston sunset data)";
-        // altTime();
-    }
-}
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(main);
+//     } 
+//     else { 
+//         // document.getElementById("calculations").innerHTML = "Geolocation is not supported by this browser. Using default (Boston sunset data)";
+//         // altTime();
+//     }
+// }
 
 
 
@@ -222,7 +228,8 @@ function tick(){
     var sillyTime = hToTStr(hours);
     var oldTime = hToTStr(d.getHours()+d.getMinutes()/60+d.getSeconds()/3600);
 
-    document.getElementById("timeval").innerHTML = "{\"new_time\":\"" + sillyTime[0]+"\"}";
+    data = {"silly_time":sillyTime[0]};
+    document.getElementById("timeval").innerHTML = sillyTime[0];
     // document.getElementById("timeval").style = sillyTime[1];
     // document.getElementById("oldtime").innerHTML = "Old Time: " + oldTime[0];
     // document.getElementById("oldtime").style = oldTime[1];
@@ -261,9 +268,8 @@ function hToTStr(h) {
 
 
 
-function main(position){
+function main(){
     findSolstices();
-    setLoc(position);
     setRiseSet();
 
     tick();
@@ -271,4 +277,4 @@ function main(position){
 }
 
 
-getLocation();
+main()
