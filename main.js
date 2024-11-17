@@ -1,6 +1,6 @@
 var lat;
 var long;
-var solstices = [1687359480,1718916600];
+var solstices = [1687359480,1718916600,1750473720];
 var ts0;
 var ts1;
 
@@ -9,7 +9,7 @@ var tnow = d.getTime()/1000;
 
 const tiltMax = 23.44*Math.PI/180;
 
-const setOffAng = 0.01454
+const setOffAng = 0 //0.01454 for angle
 
 
 
